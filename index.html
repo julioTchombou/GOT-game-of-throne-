@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoT Character Database</title>
+    <!-- Style rapide pour que ce soit propre immédiatement -->
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1a1a1a; color: #fff; margin: 0; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 40px; border-bottom: 2px solid #d4af37; padding-bottom: 20px; }
+        h1 { color: #d4af37; margin: 0; font-size: 2.5rem; }
+        .filters { display: flex; gap: 20px; margin-bottom: 30px; justify-content: center; flex-wrap: wrap; }
+        input, select { padding: 10px 15px; background: #333; border: 1px solid #555; color: white; border-radius: 5px; font-size: 1rem; min-width: 250px; }
+        input:focus, select:focus { border-color: #d4af37; outline: none; }
+        .counter { text-align: center; font-size: 1.1rem; color: #aaa; margin-bottom: 20px; }
+        #character-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; }
+        .char-card { background: #262626; border: 1px solid #444; border-radius: 10px; overflow: hidden; transition: transform 0.2s; }
+        .char-card:hover { transform: translateY(-5px); border-color: #d4af37; }
+        .char-img { width: 100%; height: 300px; object-fit: cover; }
+        .char-info { padding: 15px; }
+        .char-name { font-size: 1.3rem; margin: 0 0 10px 0; color: #d4af37; }
+        .char-title { font-style: italic; color: #ccc; margin: 0 0 5px 0; font-size: 0.9rem; }
+        .char-family { font-weight: bold; color: #888; margin: 0; font-size: 0.9rem; }
+        .no-results { text-align: center; grid-column: 1 / -1; font-size: 1.2rem; color: #ff6b6b; padding: 40px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Royaume de Westeros : Base de Données</h1>
+        </header>
+
+        <!-- Zone des Filtres -->
+        <div class="filters">
+            <!-- Recherche par nom (Événement 'input') -->
+            <input type="text" id="search-name" placeholder="Rechercher un personnage...">
+            
+            <!-- Sélection par famille (Événement 'change' ou 'input') -->
+            <select id="filter-family">
+                <option value="all">Toutes les familles / Maisons</option>
+                <option value="Stark">Maison Stark</option>
+                <option value="Lannister">Maison Lannister</option>
+                <option value="Targaryen">Maison Targaryen</option>
+                <option value="Baratheon">Maison Baratheon</option>
+                <option value="Greyjoy">Maison Greyjoy</option>
+                <option value="Martell">Maison Martell</option>
+                <option value="Tyrell">Maison Tyrell</option> 
+                <option value="Arryn">Maison Arryn</option>
+                <option value="Tully">Maison Tully</option>
+                <option value="Frey">Maison Frey</option>
+                <option value="Bolton">Maison Bolton</option>
+                <option value="Mormont">Maison Mormont</option>
+                <option value="Clegane">Maison Clegane</option>
+                <option value="Hightower">Maison Hightower</option>
+                <option value="Dayne">Maison Dayne</option>
+                <option value="Seaworth">Maison Seaworth</option>
+                <option value="Tarly">Maison Tarly</option>
+                <option value="Umber">Maison Umber</option>
+                <option value="Karstark">Maison Karstark</option>
+                <option value="Blackwood">Maison Blackwood</option>
+                <option value="Bracken">Maison Bracken</option>
+                <option value="Royce">Maison Royce</option>
+                
+            </select>
+        </div>
+
+        <!-- Compteur -->
+        <div class="counter">
+            Personnages trouvés : <span id="results-count">0</span>
+        </div>
+
+        <!-- Grille d'affichage -->
+        <main id="character-grid"></main>
+    </div>
+
+    <!-- Ton fichier TypeScript compilé en JavaScript -->
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
