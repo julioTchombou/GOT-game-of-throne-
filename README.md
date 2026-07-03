@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GOT Character Database
 
 Ce petit projet affiche une galerie de personnages de Game of Thrones à partir de l'API publique [Thrones API](https://thronesapi.com/).
@@ -30,3 +31,6 @@ Ce petit projet affiche une galerie de personnages de Game of Thrones à partir 
 ## Notes
 
 Ce projet est volontairement simple et sert de base pour découvrir la manipulation d’API et le filtrage dynamique de données.
+=======
+# GOT-game-of-throne-
+>>>>>>> 58a17b6ce95527420aa3fce701ecbcd55e3b9b15
